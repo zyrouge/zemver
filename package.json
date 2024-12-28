@@ -1,0 +1,21 @@
+{
+    "name": "@zyrouge/zemver",
+    "description": "SemVer and CalVer on steroids.",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "node --test tests/**.js",
+        "example": "node example/index.js"
+    },
+    "keywords": [],
+    "author": "Zyrouge",
+    "license": "MIT",
+    "devDependencies": {
+        "rimraf": "^6.0.1",
+        "typescript": "^5.7.2"
+    }
+}
