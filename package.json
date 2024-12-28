@@ -7,7 +7,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "rimraf dist && tsc",
         "test": "node --test tests/**.js",
         "example": "node example/index.js"
     },
