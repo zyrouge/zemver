@@ -21,7 +21,7 @@ export class ZemVer {
         public readonly month: number,
         public readonly code: number,
         public readonly prerelease?: string,
-        public readonly build?: string
+        public readonly build?: string,
     ) {}
 
     copyWith(fields?: ZemVerPartialFields) {
@@ -30,7 +30,7 @@ export class ZemVer {
             fields?.month ?? this.month,
             fields?.code ?? this.code,
             fields?.prerelease ?? this.prerelease,
-            fields?.build ?? this.build
+            fields?.build ?? this.build,
         );
     }
 
@@ -86,7 +86,7 @@ export class ZemVer {
             fields.month,
             fields.code,
             fields.prerelease,
-            fields.build
+            fields.build,
         );
     }
 }

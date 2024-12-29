@@ -9,8 +9,8 @@ ZemVer combines SemVer and CalVer to produce a versioning system that is suitabl
 
 ## But, why?
 
--   ZemVer makes it easier to identify the release time using `year` and `month` component.
--   ZemVer uses `code` component as it's primary version identifier.
+- ZemVer makes it easier to identify the release time using `year` and `month` component.
+- ZemVer uses `code` component as it's primary version identifier.
 
 ## License
 

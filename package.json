@@ -8,6 +8,7 @@
     ],
     "scripts": {
         "build": "rimraf dist && tsc",
+        "lint": "prettier . --check",
         "test": "node --test tests/**.js",
         "example": "node example/index.js"
     },
@@ -15,6 +16,7 @@
     "author": "Zyrouge",
     "license": "MIT",
     "devDependencies": {
+        "prettier": "^3.4.2",
         "rimraf": "^6.0.1",
         "typescript": "^5.7.2"
     }
