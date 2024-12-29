@@ -8,15 +8,10 @@ export interface ZemVerFields {
 
 export type ZemVerPartialFields = Partial<ZemVerFields>;
 
-export enum ZemVerBumpMode {
-    Increment,
-    IncrementNumericBuildOnly,
-}
-
 /**
  * ZemVer follows the convention of `<year>.<month>.<code>[-<prerelease>][+<build>]`.
  *
- * Examples: `2024.1.1`, `2024.1.1-stable`, `2024.1.1+1`, `2024.1.1+c05bda`, `2024.1.1-stable+c05bda`.
+ * Examples: `2024.1.1`, `2024.1.1-stable`, `2024.1.1+c05bda`, `2024.1.1-stable+c05bda`.
  *
  * Note: `build` may be numeric.
  */
@@ -39,27 +34,14 @@ export class ZemVer {
         );
     }
 
-    bump(
-        mode: ZemVerBumpMode = ZemVerBumpMode.Increment,
-        withFields?: ZemVerPartialFields
-    ) {
+    bump(withFields?: ZemVerPartialFields) {
         const date = new Date();
-        const fields: ZemVerPartialFields = { ...withFields };
-        switch (mode) {
-            case ZemVerBumpMode.Increment:
-                fields.year = date.getFullYear();
-                fields.month = date.getMonth() + 1;
-                fields.code = this.code + 1;
-                break;
-
-            case ZemVerBumpMode.IncrementNumericBuildOnly:
-                fields.build = (parseInt(this.build ?? "0") + 1).toString();
-                break;
-
-            default:
-                throw new Error(`Invalid bump mode "${mode}"`);
-        }
-        return this.copyWith(fields);
+        return this.copyWith({
+            ...withFields,
+            year: date.getFullYear(),
+            month: date.getMonth() + 1,
+            code: this.code + 1,
+        });
     }
 
     toFields() {
