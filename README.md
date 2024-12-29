@@ -3,7 +3,7 @@
 ZemVer combines SemVer and CalVer to produce a versioning system that is suitable for product releases.
 
 ```
-&lt;year&gt;.&lt;month&gt;.&lt;code&gt;[-&lt;prerelease&gt;][+&lt;build&gt;]
+<year>.<month>.<code>[-<prerelease>][+<build>]
 ^(\d{4})\.(\d{1,2})\.(\d+)(?:\-([^+]+))?(?:\+(.+))?$
 ```
 
